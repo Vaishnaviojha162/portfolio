@@ -78,10 +78,10 @@ export const skillsData = {
 export const projectsData = [
   {
     id: "01",
-    title: "Samriddhi Enterprises – Revenue-Generation Project",
-    category: "Full Stack Web Application",
+    title: "Samriddhi Enterprises",
+    category: "Revenue-Generation | Full Stack Web App",
     description:
-      "A revenue-generation and business management project designed to explore practical business opportunities, manage organizational resources efficiently, and develop sustainable income models. Developed as a full-stack web application with Node.js, Express, and MongoDB, integrating Razorpay for appointment processing and transaction workflows.",
+      "Full-stack web application serving the frontend and backend for Samriddhi Enterprises — a revenue-generation business platform. Built with Node.js, Express, and MongoDB, integrating Razorpay for appointment processing and end-to-end transaction workflows, with secure JWT-based user authentication.",
     image: "/projects/samriddhi.jpg",
     technologies: [
       "Node.js",
@@ -94,12 +94,12 @@ export const projectsData = [
       "HTML5 / CSS3",
     ],
     features: [
-      "Revenue-generation & sustainable business model operations",
-      "Appointment booking & payment processing via Razorpay integration",
-      "Secure user authentication using JSON Web Tokens (JWT) & Bcrypt",
+      "Revenue-generation business platform with appointment booking system",
+      "Razorpay payment integration for processing appointments & transactions",
+      "Secure JWT-based user authentication with Bcrypt password hashing",
       "User profile management with secure credential updates",
       "Client feedback submission system with MongoDB storage",
-      "Robust Express.js REST API architecture & vendor management",
+      "Robust Express.js REST API with vendor & resource management",
     ],
     github: "https://github.com/Vaishnaviojha162/revenue-frontend-project",
     live: "https://samriddhienterprises.netlify.app",

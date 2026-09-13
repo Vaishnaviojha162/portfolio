@@ -32,8 +32,8 @@ export default function Hero() {
     <section id="home" className="relative min-h-[92vh] flex items-center overflow-hidden pt-24 pb-16">
       {/* ── Background Portrait / Seamless Blend on Right ── */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        {/* The portrait photo positioned on the right with original styling */}
-        <div className="absolute right-0 top-0 h-full w-full sm:w-[58%] lg:w-[52%] opacity-90">
+        {/* The portrait photo positioned on the right */}
+        <div className="absolute right-0 top-0 h-full w-full sm:w-[58%] lg:w-[52%] opacity-95">
           <Image
             src="/vaishnavi.png"
             alt="Vaishnavi Ojha – Full-Stack Developer"
@@ -43,7 +43,7 @@ export default function Hero() {
             sizes="(max-width: 768px) 100vw, 52vw"
           />
           {/* Seamless gradient fade overlays blending into dark background */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#030712] via-[#030712]/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#030712] via-[#030712]/55 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#030712] via-transparent to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-l from-cyan-950/20 to-transparent" />
         </div>
