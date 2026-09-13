@@ -40,6 +40,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`dark scroll-smooth ${inter.variable} ${jetbrainsMono.variable}`}>
+      <head>
+        <link rel="preload" href="/vaishnavi.png" as="image" fetchPriority="high" />
+      </head>
       <body className="bg-[#030712] text-[#F8FAFC] antialiased selection:bg-cyan-500/30 selection:text-cyan-200">
         {children}
       </body>
