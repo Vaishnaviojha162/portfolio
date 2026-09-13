@@ -7,7 +7,7 @@ import { Github, Linkedin, Mail, ArrowRight, FileDown, MapPin, Code2, Terminal }
 import { personalInfo } from "@/data/portfolioData";
 
 const rotatingRoles = [
-  "Aspiring Software Engineer",
+  "Full-Stack Developer | CS Student",
   "Full Stack Developer",
   "C++ & WebAssembly Enthusiast",
   "Problem Solver & CS Student",
@@ -32,14 +32,14 @@ export default function Hero() {
     <section id="home" className="relative min-h-[92vh] flex items-center overflow-hidden pt-24 pb-16">
       {/* ── Background Portrait / Seamless Blend on Right ── */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        {/* The portrait photo positioned on the right */}
-        <div className="absolute right-0 top-0 h-full w-full sm:w-[58%] lg:w-[52%] opacity-85">
+        {/* The portrait photo positioned on the right with improved brightness */}
+        <div className="absolute right-0 top-0 h-full w-full sm:w-[58%] lg:w-[52%] opacity-90">
           <Image
             src="/vaishnavi.png"
-            alt="Vaishnavi Ojha – Aspiring Software Engineer"
+            alt="Vaishnavi Ojha – Full-Stack Developer"
             fill
             priority
-            className="object-cover object-top filter brightness-95 contrast-105"
+            className="object-cover object-top filter brightness-105 contrast-105"
             sizes="(max-width: 768px) 100vw, 52vw"
           />
           {/* Seamless gradient fade overlays blending into dark background */}
@@ -77,10 +77,8 @@ export default function Hero() {
 
             {/* Greeting & Headline */}
             <div className="space-y-2">
-              <p className="text-slate-400 text-lg font-medium tracking-wide flex items-center gap-2">
-                <span>Hey there</span>
-                <span className="inline-block animate-bounce">👋</span>
-                <span>I'm</span>
+              <p className="text-slate-400 text-lg font-medium tracking-wide">
+                Hi, I'm
               </p>
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.05]">
                 Vaishnavi{" "}
@@ -119,7 +117,7 @@ export default function Hero() {
 
             {/* Intro Bio */}
             <p className="text-slate-300 text-base sm:text-lg leading-relaxed max-w-xl font-normal">
-              I’m a <strong className="text-white font-semibold">Computer Science student</strong> passionate about creating meaningful digital experiences, from intuitive interfaces to scalable systems. I solve problems with code, explore modern technologies, and turn ideas into real-world products.
+              I’m a <strong className="text-white font-semibold">Computer Science student</strong> and <strong className="text-white font-semibold">Full-Stack Developer</strong> focused on building scalable web applications, intuitive user interfaces, and reliable backend systems using modern technologies.
             </p>
 
             {/* CTA Buttons */}
@@ -129,7 +127,7 @@ export default function Hero() {
                 onClick={scrollToProjects}
                 className="shimmer-btn group inline-flex items-center gap-2.5 px-7 py-3.5 text-sm font-bold text-white bg-gradient-to-r from-cyan-600 via-cyan-500 to-blue-600 hover:from-cyan-500 hover:to-blue-500 rounded-xl shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/35 transition-all hover:scale-[1.02] active:scale-[0.98] border border-cyan-400/40 cursor-pointer"
               >
-                <span>View My Work</span>
+                <span>Explore My Projects</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
               <a
@@ -192,10 +190,11 @@ export default function Hero() {
             </span>
           </div>
           <div className="p-4 font-mono text-[11px] leading-relaxed bg-[#040814]/85 text-slate-300">
-            <div><span className="text-cyan-400 font-semibold">const</span> <span className="text-slate-100">me</span> = &#123;</div>
+            <div><span className="text-cyan-400 font-semibold">const</span> <span className="text-slate-100">developer</span> = &#123;</div>
             <div className="pl-3"><span className="text-cyan-300">name</span>: <span className="text-emerald-300">"Vaishnavi Ojha"</span>,</div>
-            <div className="pl-3"><span className="text-cyan-300">role</span>: <span className="text-emerald-300">"Full Stack Dev"</span>,</div>
-            <div className="pl-3"><span className="text-cyan-300">debugging</span>: <span className="text-amber-300">"Never-ending"</span></div>
+            <div className="pl-3"><span className="text-cyan-300">role</span>: <span className="text-emerald-300">"Full-Stack Dev"</span>,</div>
+            <div className="pl-3"><span className="text-cyan-300">focus</span>: <span className="text-cyan-200">"Scalable Web & Systems"</span>,</div>
+            <div className="pl-3"><span className="text-cyan-300">status</span>: <span className="text-amber-300">"Building & Learning"</span></div>
             <div>&#125;;</div>
           </div>
         </div>

@@ -4,7 +4,7 @@ export const personalInfo = {
   tagline: "Building scalable, modern, and user-focused web applications.",
   bio: "I’m a Computer Science student passionate about creating meaningful digital experiences, from intuitive interfaces to scalable systems. I solve problems with code, explore modern technologies, and turn ideas into real-world products.",
   aboutBio: "I’m a Computer Science Engineering student and aspiring Software Engineer with a strong interest in full-stack development. I focus on building scalable, efficient, and user-centric web applications while continuously strengthening my problem-solving and software engineering skills. I’m passionate about learning new technologies and turning ideas into reliable, real-world solutions.",
-  availability: "Available for Opportunities",
+  availability: "Open to Internships & Opportunities",
   education: {
     institution: "Lovely Professional University (LPU)",
     degree: "B.Tech – Computer Science and Engineering",
@@ -34,8 +34,9 @@ export const personalInfo = {
   ],
   heroSnippet: `const developer = {
   name: "Vaishnavi Ojha",
-  role: "Aspiring Software Engineer",
-  passion: "Building scalable applications"
+  role: "Full-Stack Developer",
+  focus: "Scalable Web & Systems",
+  status: "Building & Learning"
 };`,
 };
 
@@ -77,26 +78,27 @@ export const skillsData = {
 export const projectsData = [
   {
     id: "01",
-    title: "Samriddhi Enterprises – Revenue Platform",
+    title: "Samriddhi Enterprises – Revenue Generation Platform",
     category: "Full Stack Web Application",
     description:
-      "A revenue-generation and business management platform designed to explore practical business opportunities, manage organizational resources efficiently, and develop sustainable income models.",
+      "A full-stack revenue generation and business platform for Samriddhi Enterprises built using Node.js, Express, and MongoDB. Features secure JWT authentication, dynamic appointment booking workflows, and Razorpay payment gateway integration for automated revenue transactions.",
     image: "/projects/samriddhi.jpg",
     technologies: [
       "Node.js",
       "Express.js",
       "MongoDB",
-      "JavaScript",
+      "Razorpay API",
       "JWT Auth",
-      "Payment Gateway",
+      "JavaScript",
+      "HTML5/CSS3",
     ],
     features: [
-      "Revenue forecasting & business model management",
-      "Secure JWT user authentication & session handling",
-      "Integrated payment gateway checkout processing",
-      "Interactive financial analytics & transaction dashboard",
-      "Dynamic client tracking & resource management",
-      "Responsive glassmorphism dark UI architecture",
+      "Full-stack revenue generation & vendor appointment platform",
+      "Razorpay payment gateway integration for processing revenue transactions",
+      "Secure JWT-based user and vendor authentication & session handling",
+      "MongoDB database architecture with robust Express.js REST APIs",
+      "Interactive business dashboard with client booking management",
+      "Responsive, modern dark UI with appointment tracking",
     ],
     github: "https://github.com/Vaishnaviojha162/revenue-frontend-project",
     live: "https://samriddhienterprises.netlify.app",
