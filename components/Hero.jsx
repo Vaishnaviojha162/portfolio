@@ -33,19 +33,19 @@ export default function Hero() {
       {/* ── Background Portrait / Seamless Blend on Right ── */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         {/* The portrait photo positioned on the right */}
-        <div className="absolute right-0 top-0 h-full w-full sm:w-[58%] lg:w-[52%] opacity-100">
+        <div className="absolute right-0 top-0 h-full w-full sm:w-[58%] lg:w-[52%] opacity-90">
           <Image
             src="/vaishnavi.png"
             alt="Vaishnavi Ojha – Full-Stack Developer"
             fill
             priority
-            className="object-cover object-top filter brightness-115 contrast-105"
+            className="object-cover object-top filter brightness-105 contrast-105"
             sizes="(max-width: 768px) 100vw, 52vw"
           />
           {/* Seamless gradient fade overlays blending into dark background */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#030712] via-[#030712]/30 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#030712] via-[#030712]/80 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#030712] via-transparent to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-l from-cyan-950/10 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-l from-cyan-950/20 to-transparent" />
         </div>
         {/* Solid dark panel on left for text readability */}
         <div className="absolute inset-y-0 left-0 w-full sm:w-1/2 bg-[#030712]/90 sm:bg-[#030712]" />
