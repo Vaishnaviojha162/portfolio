@@ -19,22 +19,36 @@ export default function Contact() {
     setStatus({ submitting:true, submitted:false, error:false, message:"" });
 
     try {
-      const res = await fetch("/api/contact", {
+      // Direct mailto launcher and instant confirmation feedback
+      const subject = encodeURIComponent(`Portfolio Inquiry from ${formData.name}`);
+      const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`);
+      
+      // Also post to Netlify Forms if hosted on Netlify
+      const netlifyFormData = new URLSearchParams({
+        "form-name": "contact",
+        ...formData,
+      }).toString();
+
+      fetch("/", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: netlifyFormData,
+      }).catch(() => {});
+
+      setStatus({
+        submitting: false,
+        submitted: true,
+        error: false,
+        message: "Thank you! Your message has been prepared. Opening your email client to send...",
       });
 
-      const data = await res.json();
+      setTimeout(() => {
+        window.location.href = `mailto:vaishnaviojha006@gmail.com?subject=${subject}&body=${body}`;
+      }, 500);
 
-      if (res.ok && data.success) {
-        setStatus({ submitting:false, submitted:true, error:false, message: data.message || "Thank you! Your message has been sent. I'll get back to you soon." });
-        setFormData({ name:"", email:"", message:"" });
-      } else {
-        setStatus({ submitting:false, submitted:false, error:true, message: data.error || "Failed to send message." });
-      }
+      setFormData({ name: "", email: "", message: "" });
     } catch (err) {
-      setStatus({ submitting:false, submitted:false, error:true, message: "An unexpected error occurred. Please try again." });
+      setStatus({ submitting: false, submitted: false, error: true, message: "Could not open email client. Please email vaishnaviojha006@gmail.com directly." });
     }
   };
 
@@ -92,7 +106,8 @@ export default function Contact() {
 
           {/* Form */}
           <div className="lg:col-span-7">
-            <form onSubmit={handleSubmit} className="glass-card p-8 sm:p-10 rounded-3xl space-y-6 shadow-xl">
+            <form name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit} className="glass-card p-8 sm:p-10 rounded-3xl space-y-6 shadow-xl">
+              <input type="hidden" name="form-name" value="contact" />
               <h3 className="text-xl font-bold text-white">Send a Message</h3>
 
               {status.error && (
