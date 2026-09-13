@@ -32,23 +32,20 @@ export default function Hero() {
     <section id="home" className="relative min-h-[92vh] flex items-center overflow-hidden pt-24 pb-16">
       {/* ── Background Portrait / Seamless Blend on Right ── */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        {/* Subtle Cyan Backlight behind portrait for atmospheric illumination */}
-        <div className="absolute top-1/4 right-12 h-[380px] w-[380px] rounded-full bg-cyan-500/15 blur-[100px] pointer-events-none" />
-
-        {/* The portrait photo positioned on the right with enhanced brightness & visibility */}
-        <div className="absolute right-0 top-0 h-full w-full sm:w-[58%] lg:w-[52%] opacity-98">
+        {/* The portrait photo positioned on the right with original styling */}
+        <div className="absolute right-0 top-0 h-full w-full sm:w-[58%] lg:w-[52%] opacity-90">
           <Image
             src="/vaishnavi.png"
             alt="Vaishnavi Ojha – Full-Stack Developer"
             fill
             priority
-            className="object-cover object-top filter brightness-115 contrast-105"
+            className="object-cover object-top filter brightness-105 contrast-105"
             sizes="(max-width: 768px) 100vw, 52vw"
           />
           {/* Seamless gradient fade overlays blending into dark background */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#030712] via-[#030712]/45 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#030712] via-[#030712]/80 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#030712] via-transparent to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-l from-cyan-950/15 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-l from-cyan-950/20 to-transparent" />
         </div>
         {/* Solid dark panel on left for text readability */}
         <div className="absolute inset-y-0 left-0 w-full sm:w-1/2 bg-[#030712]/90 sm:bg-[#030712]" />
@@ -57,12 +54,7 @@ export default function Hero() {
       {/* ── Main Content Container ── */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12">
         <div className="max-w-2xl">
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="space-y-6"
-          >
+          <div className="space-y-6 animate-hero-fade">
 
             {/* Location & University Tag */}
             <div>
@@ -169,18 +161,13 @@ export default function Hero() {
               ))}
             </div>
 
-          </motion.div>
+          </div>
         </div>
       </div>
 
       {/* ── Floating developer.js Terminal Widget on Bottom Right ── */}
-      <motion.div
-        initial={{ opacity: 0, y: 25 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5, duration: 0.6 }}
-        className="absolute bottom-8 right-6 lg:right-16 z-20 hidden md:block"
-      >
-        <div className="glass-card rounded-2xl shadow-2xl overflow-hidden w-64 border border-cyan-500/30 animate-float-gentle">
+      <div className="absolute bottom-8 right-6 lg:right-16 z-20 hidden md:block animate-float-gentle">
+        <div className="glass-card rounded-2xl shadow-2xl overflow-hidden w-64 border border-cyan-500/30">
           <div className="flex items-center justify-between px-3.5 py-2 bg-[#050b18]/90 border-b border-cyan-500/20">
             <div className="flex items-center gap-1.5">
               <span className="w-2.5 h-2.5 rounded-full bg-rose-500" />
@@ -201,7 +188,7 @@ export default function Hero() {
             <div>&#125;;</div>
           </div>
         </div>
-      </motion.div>
+      </div>
 
       {/* Bottom Subtle Gradient Transition */}
       <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#030712] to-transparent z-10 pointer-events-none" />
