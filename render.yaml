@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: vaishnaviojha-portfolio
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: REDIS_URL
+        value: redis://red-dagrc72d0e5s73atdke0:6379
+
