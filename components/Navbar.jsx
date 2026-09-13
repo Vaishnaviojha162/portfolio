@@ -20,25 +20,25 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
-  const [scrollProgress, setScrollProgress] = useState(0);
-
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setScrolled(window.scrollY > 25);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 25);
 
-      const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
-      if (totalScroll > 0) {
-        setScrollProgress((window.scrollY / totalScroll) * 100);
-      }
-
-      const sections = navItems.map((i) => i.href.substring(1));
-      const sp = window.scrollY + 140;
-      for (const s of sections) {
-        const el = document.getElementById(s);
-        if (el && sp >= el.offsetTop && sp < el.offsetTop + el.offsetHeight) {
-          setActiveSection(s);
-          break;
-        }
+          const sections = navItems.map((i) => i.href.substring(1));
+          const sp = window.scrollY + 140;
+          for (const s of sections) {
+            const el = document.getElementById(s);
+            if (el && sp >= el.offsetTop && sp < el.offsetTop + el.offsetHeight) {
+              setActiveSection(s);
+              break;
+            }
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -56,14 +56,6 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Top Scroll Progress Line */}
-      <div className="fixed top-0 left-0 right-0 h-[2px] z-50 bg-transparent">
-        <div
-          className="h-full bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-400 transition-all duration-100 ease-out shadow-[0_0_10px_rgba(6,182,212,0.8)]"
-          style={{ width: `${scrollProgress}%` }}
-        />
-      </div>
-
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-200 ${
           scrolled ? "glass-nav py-3.5 shadow-2xl backdrop-blur-xl" : "bg-transparent py-5"

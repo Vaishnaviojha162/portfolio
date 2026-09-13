@@ -52,6 +52,7 @@ export default function Certificates() {
                     src={cert.image}
                     alt={cert.title}
                     fill
+                    priority={true}
                     sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover object-center group-hover/img:scale-105 transition-transform duration-300"
                   />
