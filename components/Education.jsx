@@ -35,13 +35,28 @@ export default function Education() {
                     <Calendar className="w-3.5 h-3.5" />
                     {education.duration}
                   </span>
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#080e1e] border border-cyan-500/20 text-slate-400 text-xs font-mono">
+                  <a
+                    href={education.collegeMapUrl || personalInfo.links.collegeMap}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="View location on Google Maps"
+                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#080e1e] hover:bg-[#0f1b3c] border border-cyan-500/20 hover:border-cyan-400/50 text-slate-400 hover:text-cyan-300 text-xs font-mono transition-colors cursor-pointer"
+                  >
                     <MapPin className="w-3.5 h-3.5 text-cyan-400" />
-                    {education.location}
-                  </span>
+                    <span>{education.location}</span>
+                  </a>
                 </div>
                 <h3 className="text-2xl sm:text-3xl font-extrabold text-white">{education.degree}</h3>
-                <p className="text-cyan-400 font-semibold text-lg">{education.institution}</p>
+                <a
+                  href={education.collegeMapUrl || personalInfo.links.collegeMap}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Open Lovely Professional University in Google Maps"
+                  className="inline-flex items-center gap-1.5 text-cyan-400 hover:text-cyan-300 font-semibold text-lg transition-colors group/inst cursor-pointer"
+                >
+                  <span>{education.institution}</span>
+                  <MapPin className="w-4 h-4 text-cyan-400 group-hover/inst:scale-110 transition-transform" />
+                </a>
                 <p className="text-slate-300 text-sm leading-relaxed">{education.description}</p>
                 <div className="pt-3 border-t border-cyan-500/15">
                   <span className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2 block font-mono">Core Focus Areas</span>
@@ -62,7 +77,15 @@ export default function Education() {
                   <Award className="w-7 h-7" />
                 </div>
                 <span className="text-white font-bold text-base">Current Pursuit</span>
-                <span className="text-xs text-slate-400 mt-1">Lovely Professional University</span>
+                <a
+                  href={education.collegeMapUrl || personalInfo.links.collegeMap}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-slate-400 hover:text-cyan-300 mt-1 transition-colors flex items-center gap-1 cursor-pointer"
+                >
+                  <span>Lovely Professional University</span>
+                  <MapPin className="w-3 h-3 text-cyan-400" />
+                </a>
                 <div className="mt-4 px-3 py-1 rounded-full bg-emerald-950/60 border border-emerald-500/40 text-emerald-400 text-xs font-mono font-medium">
                   Enrolled & Active
                 </div>

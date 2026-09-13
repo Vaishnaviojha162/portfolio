@@ -63,10 +63,16 @@ export default function Hero() {
 
             {/* Location & University Tag */}
             <div>
-              <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-xs text-cyan-300 font-mono backdrop-blur-md shadow-sm">
-                <MapPin className="w-3.5 h-3.5 text-cyan-400" />
-                Lovely Professional University, Punjab
-              </span>
+              <a
+                href={personalInfo.links.collegeMap || "https://maps.google.com/?q=Lovely+Professional+University,+Phagwara,+Punjab"}
+                target="_blank"
+                rel="noopener noreferrer"
+                title="View Lovely Professional University on Google Maps"
+                className="group inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-cyan-950/60 hover:bg-cyan-900/60 border border-cyan-500/30 hover:border-cyan-400/60 text-xs text-cyan-300 hover:text-cyan-200 font-mono backdrop-blur-md shadow-sm transition-all hover:scale-105 cursor-pointer"
+              >
+                <MapPin className="w-3.5 h-3.5 text-cyan-400 group-hover:scale-110 transition-transform" />
+                <span>Lovely Professional University, Punjab</span>
+              </a>
             </div>
 
             {/* Greeting & Headline */}

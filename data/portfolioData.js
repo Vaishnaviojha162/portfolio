@@ -10,6 +10,7 @@ export const personalInfo = {
     degree: "B.Tech – Computer Science and Engineering",
     duration: "2023 – 2027",
     location: "Phagwara, Punjab, India",
+    collegeMapUrl: "https://maps.google.com/?q=Lovely+Professional+University,+Phagwara,+Punjab",
     description: "Specializing in software engineering, core algorithms, database systems, web development, and cloud computing architectures.",
     highlights: [
       "Data Structures & Algorithms",
@@ -23,6 +24,7 @@ export const personalInfo = {
     github: "https://github.com/Vaishnaviojha162",
     linkedin: "https://www.linkedin.com/in/vaishnaviojha/",
     email: "mailto:vaishnaviojha006@gmail.com",
+    collegeMap: "https://maps.google.com/?q=Lovely+Professional+University,+Phagwara,+Punjab",
   },
   stats: [
     { label: "Technologies", value: 10, suffix: "+" },

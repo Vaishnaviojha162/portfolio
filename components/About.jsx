@@ -165,9 +165,16 @@ export default function About() {
                 <h3 className="text-2xl font-extrabold text-white mb-2 leading-snug">
                   {personalInfo.education.degree}
                 </h3>
-                <p className="text-cyan-400 font-semibold text-base mb-4">
-                  {personalInfo.education.institution}
-                </p>
+                <a
+                  href={personalInfo.education.collegeMapUrl || personalInfo.links.collegeMap}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="View Lovely Professional University on Google Maps"
+                  className="inline-flex items-center gap-1.5 text-cyan-400 hover:text-cyan-300 font-semibold text-base mb-4 transition-colors cursor-pointer group/inst"
+                >
+                  <span>{personalInfo.education.institution}</span>
+                  <span className="text-xs text-cyan-400 group-hover/inst:translate-x-0.5 transition-transform">↗</span>
+                </a>
                 <p className="text-slate-300 text-sm leading-relaxed mb-6">
                   {personalInfo.education.description}
                 </p>
